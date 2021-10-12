@@ -10,6 +10,7 @@ body {
 
 section {
     background-color: rgb(23, 74, 150);
+    padding: 70px 0;
 }
 
 h1 {
@@ -17,10 +18,11 @@ h1 {
     color: white;
     font-size: 50px;
     font-weight: bolder;
+    margin-bottom: 50px;
 }
 
 .square-blue {
-    background-color: rgb(30, 115, 189);
+    background-color: rgb(37, 125, 201);
 }
 
 .square-green {
@@ -31,8 +33,18 @@ h1 {
     background-color: rgb(237, 231, 45);
 }
 
-[class^="square"] > * {
+.square-red {
+    background-color: rgb(245, 67, 55);
+}
+
+[class^="square"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 22px;
+}
+
+.my-col {
+    flex: 0 0 calc(100% / 7 - 20px);
+    margin: 20px 10px;
 }
