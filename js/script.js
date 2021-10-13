@@ -1,6 +1,5 @@
 const container = document.querySelector('.container')
 const numberOfCols = 7
-const numberOfRows = Math.ceil(100 / 7)
 
 // create one row that has flex-wrap
 const row = document.createElement('div')
@@ -24,27 +23,22 @@ for (let i = 1; i <= 100; i++) {
 
     // condition formatting of the squares
     // if divisible by 3 and 5 => fizzbuzz
+    // if is not divisible by 3 and 5 => check if divisible by 3 or 5
     if (isDivisibleBy3And5) {
         square.classList.add('square-red', 'ratio', 'ratio-1x1')
         square.textContent = 'fizzbuzz'
         col.appendChild(square)
-    }
-    // if is not divisible by 3 and 5 => check if divisible by 3 or 5
-    if (!isDivisibleBy3And5) {
+    } else if (isDivisibleBy3) {
+        square.classList.add('square-green', 'ratio', 'ratio-1x1')
+        square.textContent = 'fizz'
+        col.appendChild(square)
+    } else if (isDivisibleBy5) {
+        square.classList.add('square-yellow', 'ratio', 'ratio-1x1')
+        square.textContent = 'buzz'
+        col.appendChild(square)
+    } else {
         square.classList.add('square-blue', 'ratio', 'ratio-1x1')
         square.textContent = i
         col.appendChild(square)
-
-        if (isDivisibleBy3) {
-            square.classList.add('square-green', 'ratio', 'ratio-1x1')
-            square.textContent = 'fizz'
-            col.appendChild(square)
-        }
-
-        if (isDivisibleBy5) {
-            square.classList.add('square-yellow', 'ratio', 'ratio-1x1')
-            square.textContent = 'buzz'
-            col.appendChild(square)
-        }
     }
 }
